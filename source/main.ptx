@@ -21,12 +21,12 @@
     <xi:include href="./ch7-sample-in-jar.ptx" />
     <xi:include href="./ch8-big-data-big-deal.ptx" />
     <xi:include href="./ch9-onward-with-rstudio.ptx" />
-    <xi:include href="./ch10-tweet-tweet.ptx" />
+    <!-- <xi:include href="./ch10-tweet-tweet.ptx" />
     <xi:include href="./ch11-popularity-contest.ptx" />
     <xi:include href="./ch12-string-theory.ptx" />
     <xi:include href="./ch13-word-perfect.ptx" />
     <xi:include href="./ch14-storage-wars.ptx" />
-    <xi:include href="./ch15-map-mashup.ptx" />
+    <xi:include href="./ch15-map-mashup.ptx" /> -->
     <xi:include href="./ch16-line-up-please.ptx" />
     <xi:include href="./ch17-data-mining.ptx" />
     <xi:include href="./ch18-vectors.ptx" />
