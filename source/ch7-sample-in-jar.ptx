@@ -72,7 +72,7 @@
 sample(USstatePops$...1,size=16,replace=TRUE)
 	</input>
 </sage>
-<figure xml:id="">
+<figure xml:id="code-output">
 	<caption>The output you're seeing is from the readxl::<c>read_excel()</c> function when the Excel file has no column names in the first row and you set col_names = FALSE. It assigns default column names like ...1, ...2, etc., and tells you that it renamed them — that's what the "New names" message means.</caption>
 </figure>
 
@@ -90,7 +90,7 @@ sample(USstatePops$...1,size=16,replace=TRUE)
 mean(sample(USstatePops$...1,size=16, replace=TRUE))
 	</input>
 </sage>
-<figure xml:id="">
+<figure xml:id="code-output-mean">
 	<caption>The output you're seeing is differnt from the one above due to .name_repair = "unique_quiet" which prevents R from making any changes to the names of the columns in the data frame.</caption>
 </figure>
 
