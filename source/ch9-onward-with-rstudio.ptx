@@ -479,13 +479,29 @@
 				</p>
 
 				<p>
-					Let’s try out the <idx><c>mfv()</c></idx><term>mfv()</term> function. This function returns the "most frequent value" in a vector, which is generally what we want in a mode function:
+					Let’s try out the <idx><c>mfv()</c></idx><term>mfv()</term> function. For the sake of this example we will use the entire method for the mfv() function, it is not necessary to type this in, as it is already part of the modeest package. This function returns the "most frequent value" in a vector, which is generally what we want in a mode function:
 				</p>
 
 				<pre>
 					&gt; mfv(tinyData)
 					[1] 9
 				</pre>
+
+				<sage language="r">
+						<input>
+			mfv &lt;- function (x, ...)
+			{
+			f &lt;- factor(x)
+			tf &lt;- tabulate(f)
+			return(as.numeric(levels(f)[tf == max(tf)]))
+			}
+			tinyData &lt;- c(1,2,1,2,3,3,3,4,5,4,5)
+			tinyData &lt;- c(tinyData,5,5,5)
+			tinyData &lt;- c(tinyData,1,1,1)
+			tinyData &lt;- c(tinyData,9,9,9,9,9,9,9)
+			mfv(tinyData)
+						</input>
+					</sage>
 
 				<p>
 					So far so good! This seems to do exactly what our MyMode() function did, though it probably uses a different method. In fact, it is easy to see what strategy the authors of this package used just by typing the name of the function at the R command line:
@@ -513,6 +529,26 @@
 					&gt; MyMode(multiData)
 					[1] 7
 				</pre>
+
+				<sage language="r">
+						<input>
+		MyMode &lt;- function(myVector)
+		{		
+		uniqueValues &lt;- unique(myVector)
+		uniqueCounts &lt;- tabulate(match(myVector,uniqueValues))
+		return(uniqueValues[which.max(uniqueCounts)])
+		}
+		mfv &lt;- function (x, ...)
+		{
+		f &lt;- factor(x)
+		tf &lt;- tabulate(f)
+		return(as.numeric(levels(f)[tf == max(tf)]))
+		}	
+		multiData &lt;- c(1,5,7,7,9,9,10)
+		print(mfv(multiData))
+		MyMode(multiData)
+						</input>
+					</sage>
 
 				<p>
 					In the first command line above, we made a small new vector that contains two modes, 7 and 9. Each of these numbers occurs twice, while the other numbers occur only once. When we run mfv() on this vector it correctly reports both 7 and 9 as modes. When we use our function, MyMode(), it only reports the first of the two modes.
